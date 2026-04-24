@@ -53,7 +53,6 @@ bash codex-imagegen/scripts/imagegen.sh \
 - The `image_generation` feature flag is still marked "under development" in Codex CLI. It works today; could change in a future release.
 - Subscription-billed image generation burns Codex credits 3–5× faster than a text turn. ChatGPT Pro has a 10× Codex multiplier through May 31, 2026 — substantial headroom but not unlimited.
 - **No video support.** Codex CLI has no `$videogen`. Use `sora.com` manually (Pro = unlimited) or the paid `sora-2` API.
-- Reference-image fidelity is looser than dedicated image models like Gemini Nano Banana 2 or Midjourney. Treat this as a cost-sensitive generator, not a brand-asset replacement.
 - OpenAI could remove subscription access for this path at any time. Bet on it accordingly.
 
 ## Troubleshooting
