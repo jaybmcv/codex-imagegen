@@ -122,10 +122,11 @@ if [[ ! -d "$CODEX_IMG_DIR" ]]; then
   exit 4
 fi
 
-# Grab the newest ig_*.png in the thread dir.
-SRC_PNG="$(ls -1t "$CODEX_IMG_DIR"/ig_*.png 2>/dev/null | head -1 || true)"
+# Grab the newest PNG in the thread dir. Codex has named these ig_*.png and,
+# as observed on codex-cli 0.162.1, exec-*.png, so match any PNG.
+SRC_PNG="$(ls -1t "$CODEX_IMG_DIR"/*.png 2>/dev/null | head -1 || true)"
 if [[ -z "$SRC_PNG" ]]; then
-  echo "[imagegen] no ig_*.png found in $CODEX_IMG_DIR" >&2
+  echo "[imagegen] no PNG found in thread dir: $CODEX_IMG_DIR" >&2
   ls -la "$CODEX_IMG_DIR" >&2 || true
   exit 5
 fi
