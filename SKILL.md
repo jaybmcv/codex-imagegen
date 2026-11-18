@@ -61,7 +61,7 @@ Per OpenAI docs: built-in image generation counts toward Codex usage limits and 
 
 1. Wrapper runs `codex exec --ephemeral --json` with a prompt that invokes `$imagegen`.
 2. First JSONL event is `{"type":"thread.started","thread_id":"..."}` — wrapper captures that id.
-3. Codex writes the PNG to `~/.codex/generated_images/<thread_id>/ig_*.png`.
+3. Codex writes the PNG to `~/.codex/generated_images/<thread_id>/`. The file has been named `ig_*.png` and, as observed on codex-cli 0.162.1, `exec-*.png`.
 4. Wrapper copies the newest PNG out of that dir to `--out`.
 5. Temporary thread directory is left in place (cheap, <100KB) — `~/.codex/generated_images` can be cleared periodically.
 
